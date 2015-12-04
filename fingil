@@ -1,49 +1,142 @@
 #!/bin/bash
-#Figil written by alireza.amirsamimi@ubuntu.ir based on two scripts that written by fzero@rubi.gd 
+#Figil written by alireza.amirsamimi@ubuntu.ir and AliReaza
 
-case_function_per () {
-    persian=( ض ص ث ق ف غ ع ه خ ح ج چ ش س ی ب ل ا ت ن م ک گ ظ ط ز ر ذ د پ و ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹ ۰ ! ٬ ٫ ﷼ ٪ × ، ؛ )
-    english=( q w e r t y u i o p \[ \] a s d f g h j k l \; \' z x c v b n m , 1 2 3 4 5 6 7 8 9 0 ! @ \# \$ % \^ \& \' )
-    len=$(echo ${#english[*]})
-    arg=$@
-    for ((i=1 ; i < $len ; i++)) do
-        arg=${arg//${persian[$i]}/${english[$i]}}
+convert () {
+    text=$@
+    out=""
+    for i in $(seq 0 $((${#text} - 1))); do
+        hex=$(echo "${text:$i:1}" | xxd -p)
+
+        case "$hex" in
+            "300a") #0
+                out="dbb00a" #۰
+            ;;
+            "310a") #1
+                out="dbb10a" #۱
+            ;;
+            "320a") #2
+                out="dbb20a" #۲
+            ;;
+            "330a") #3
+                out="dbb30a" #۳
+            ;;
+            "340a") #4
+                out="dbb40a" #۴
+            ;;
+            "350a") #5
+                out="dbb50a" #۵
+            ;;
+            "360a") #6
+                out="dbb60a" #۶
+            ;;
+            "370a") #7
+                out="dbb70a" #۷
+            ;;
+            "380a") #8
+                out="dbb80a" #۸
+            ;;
+            "390a") #9
+                out="dbb90a" #۹
+            ;;
+
+            "610a") #a
+                out="d8b40a" #ش
+            ;;
+            "620a") #b
+                out="d8b00a" #ذ
+            ;;
+            "630a") #c
+                out="d8b20a" #ز
+            ;;
+            "640a") #d
+                out="db8c0a" #ی
+            ;;
+            "650a") #e
+                out="d8ab0a" #ث
+            ;;
+            "660a") #f
+                out="d8a80a" #ب
+            ;;
+            "670a") #g
+                out="d9840a" #ل
+            ;;
+            "680a") #h
+                out="d8a70a" #ا
+            ;;
+            "690a") #i
+                out="d9870a" #ه
+            ;;
+            "6a0a") #j
+                out="d8aa0a" #ت
+            ;;
+            "6b0a") #k
+                out="d9860a" #ن
+            ;;
+            "6c0a") #l
+                out="d9850a" #م
+            ;;
+            "6d0a") #m
+                out="d9be0a" #پ
+            ;;
+            "6e0a") #n
+                out="d8af0a" #ن
+            ;;
+            "6f0a") #o
+                out="d8ae0a" #خ
+            ;;
+            "700a") #p
+                out="d8ad0a" #ح
+            ;;
+            "710a") #q
+                out="d8b60a" #ض
+            ;;
+            "720a") #r
+                out="d9820a" #ق
+            ;;
+            "730a") #s
+                out="d8b30a" #س
+            ;;
+            "740a") #t
+                out="d9810a" #ف
+            ;;
+            "750a") #u
+                out="d8b90a" #ع
+            ;;
+            "760a") #v
+                out="d8b10a" #ر
+            ;;
+            "770a") #w
+                out="d8b50a" #ص
+            ;;
+            "780a") #x
+                out="d8b70a" #ط
+            ;;
+            "790a") #y
+                out="d8ba0a" #غ
+            ;;
+            "7a0a") #z
+                out="d8b80a" #ظ
+            ;;
+            *)
+                out="${hex}"
+            ;;
+        esac
+
+        #out=$(echo "$out" | xxd -p -r)
+        echo -ne "$out"\\r
     done
-
-    echo "$arg"
 }
 
-case_function_en () {
-    persian=( ض ص ث ق ف غ ع ه خ ح ج چ ش س ی ب ل ا ت ن م ک گ ظ ط ز ر ذ د پ و ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹ ۰ ! ٬ ٫ ﷼ ٪ × ، ؛ )
-    english=( q w e r t y u i o p \[ \] a s d f g h j k l \; \' z x c v b n m , 1 2 3 4 5 6 7 8 9 0 ! @ \# \$ % \^ \& \' )
-    len=$(echo ${#persian[*]})
-    arg=$@
-    for ((i=1 ; i < $len ; i++)) do
-        arg=${arg//${english[$i]}/${persian[$i]}}
-    done
-
-    echo "$arg"
+unhex () {
+	hex=$@
+        out=$(echo "$hex" | xxd -p -r)
+        echo -ne "$out"\\r
 }
+
 window_pid=$(xdotool getactivewindow)
-#copy clipboard
 clipboard=$(xclip -o -sel clip )
-while [ -f /tmp/fingil.txt ];do
-    sleep 0.5
-done    
-#Spliting clipbord to letters and saving them in a text file in seperate lines
-echo $clipboard > /tmp/fingil.txt
-#checking encoding of file.utf8 is for persian.
-encode_type=$(file -bi /tmp/fingil.txt)
-#reading text file lines and converting them
 
-if [ "$encode_type" == "text/plain; charset=utf-8" ];then
-    case_function_per $clipboard
-    sleep 1
-    xdotool type --delay 400 --window $window_pid "$(case_function_per $clipboard)"
-else
-    case_function_en  $clipboard
-    sleep 1
-    xdotool  type --delay 400 --window $window_pid "$(case_function_en $clipboard)"
-fi
-rm /tmp/fingil.txt
+#xdotool type --delay 400 --window $window_pid "$(convert $clipboard)"
+xdotool type --delay 400 --window $window_pid "$(unhex $(convert $clipboard))"
+
 exit
