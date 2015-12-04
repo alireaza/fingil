@@ -218,7 +218,7 @@ window_pid=$(xdotool getactivewindow)
 #copy clipboard
 
  
-clipboard=$(xclip -o -sel clip )
+clipboard=$(xclip -out )
 #Spliting clipbord to letters and saving them in a text file in seperate lines
 echo $clipboard | grep -o . > /tmp/fingil.txt
 #checking encoding of file.utf8 is for persian.
