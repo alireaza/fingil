@@ -1,236 +1,234 @@
 #!/bin/bash
-#Figil writed by alireza.amirsamimi@ubuntu.ir
-case_function_per (){
-  case "$line" in
-    "ض")
-    xdotool type --window $window_pid "q"  ;;
-    "ص")
-    xdotool type --window $window_pid "w"  ;;
-    "ث")
-    xdotool type --window $window_pid "e"  ;;
-    "ق")
-    xdotool type --window $window_pid "r"  ;;
-    "ف")
-    xdotool type --window $window_pid "t"  ;;
-    "غ")
-    xdotool type --window $window_pid "y"  ;;
-    "ع")
-    xdotool type --window $window_pid "u"  ;;
-    "ه")
-    xdotool type --window $window_pid "i"  ;;
-    "خ")
-    xdotool type --window $window_pid "o"  ;;
-    "ح")
-    xdotool type --window $window_pid "p"  ;;
-    "ج")
-    xdotool type --window $window_pid "["  ;;
-    "چ")
-    xdotool type --window $window_pid "]"  ;;
-    "ش")
-    xdotool type --window $window_pid "a"  ;;
-    "س")
-    xdotool type --window $window_pid "s"  ;;
-    "ی")
-    xdotool type --window $window_pid "d"  ;;
-    "ب")
-    xdotool type --window $window_pid "f"  ;;
-    "ل")
-    xdotool type --window $window_pid "g"  ;;
-    "ا")
-    xdotool type --window $window_pid "h"  ;;
-    "ت")
-    xdotool type --window $window_pid "j"  ;;
-    "ن")
-    xdotool type --window $window_pid "k"  ;;
-    "م")
-    xdotool type --window $window_pid "l"  ;;
-    "ک")
-    xdotool type --window $window_pid ";"  ;;
-    "گ")
-    xdotool type --window $window_pid "'"  ;;
-    "ظ")
-    xdotool type --window $window_pid "z"  ;;
-    "ط")
-    xdotool type --window $window_pid "x"  ;;
-    "ز")
-    xdotool type --window $window_pid "c"  ;;
-    "ر")
-    xdotool type --window $window_pid "v"  ;;
-    "ذ")
-    xdotool type --window $window_pid "b"  ;;
-    "د")
-    xdotool type --window $window_pid "n"  ;;
-    "پ")
-    xdotool type --window $window_pid "m"  ;;
-    "و")
-    xdotool type --window $window_pid ","  ;;
-    "ژ‍")
-    xdotool type --window $window_pid "C"  ;;
-    "۱")
-    xdotool type --window $window_pid "1"  ;;
-    "۲")
-    xdotool type --window $window_pid "2"  ;;
-    "۳")
-    xdotool type --window $window_pid "3"  ;;
-    "۴")
-    xdotool type --window $window_pid "4"  ;;
-    "۵")
-    xdotool type --window $window_pid "5"  ;;
-    "۶")
-    xdotool type --window $window_pid "6"  ;;
-    "۷")
-    xdotool type --window $window_pid "7"  ;;
-    "۸")
-    xdotool type --window $window_pid "8"  ;;
-    "۹")
-    xdotool type --window $window_pid "9"  ;;
-    "۰")
-    xdotool type --window $window_pid "0"  ;;
-    "")
-    xdotool type --window $window_pid " "  ;;
-    ")")
-    xdotool type --window $window_pid "("  ;;
-    "(")
-    xdotool type --window $window_pid ")"  ;;
-    "؟")
-    xdotool type --window $window_pid "?"  ;;
-    "٬")
-    xdotool type --window $window_pid "@"  ;;
-    "٪")
-    xdotool type --window $window_pid "%"  ;;
-    "×")
-    xdotool type --window $window_pid "^"  ;;
-    "،")
-    xdotool type --window $window_pid "&"  ;;
-    *)
-    xdotool type --window $window_pid "$line"  ;;
-  esac
-}
-case_function_en (){
-  case $line in
-    "q"|"Q")
-    xdotool type --window $window_pid "ض"  ;;
-    "w"|"W")
-    xdotool type --window $window_pid "ص"  ;;
-    "e"|"E")
-    xdotool type --window $window_pid "ث"  ;;
-    "r"|"R")
-    xdotool type --window $window_pid "ق"  ;;
-    "t"|"T")
-    xdotool type --window $window_pid "ف"  ;;
-    "y"|"Y")
-    xdotool type --window $window_pid "غ"  ;;
-    "u"|"U")
-    xdotool type --window $window_pid "ع"  ;;
-    "i"|"I")
-    xdotool type --window $window_pid "ه"  ;;
-    "o"|"O")
-    xdotool type --window $window_pid "خ"  ;;
-    "p"|"P")
-    xdotool type --window $window_pid "ح"  ;;
-    "[")
-    xdotool type --window $window_pid "ج"  ;;
-    "]")
-    xdotool type --window $window_pid "چ"  ;;
-    "a"|"A")
-    xdotool type --window $window_pid "ش"  ;;
-    "s"|"S")
-    xdotool type --window $window_pid "س"  ;;
-    "d"|"D")
-    xdotool type --window $window_pid "ی"  ;;
-    "f"|"F")
-    xdotool type --window $window_pid "ب"  ;;
-    "g"|"G")
-    xdotool type --window $window_pid "ل"  ;;
-    "h"|"H")
-    xdotool type --window $window_pid "ا"  ;;
-    "j"|"J")
-    xdotool type --window $window_pid "ت"  ;;
-    "k"|"K")
-    xdotool type --window $window_pid "ن"  ;;
-    "l"|"L")
-    xdotool type --window $window_pid "م"  ;;
-    ";")
-    xdotool type --window $window_pid "ک"  ;;
-    "'")
-    xdotool type --window $window_pid "گ"  ;;
-    "z"|"Z")
-    xdotool type --window $window_pid "ظ"  ;;
-    "x"|"X")
-    xdotool type --window $window_pid "ط"  ;;
-    "c")
-    xdotool type --window $window_pid "ز"  ;;
-    "v"|"V")
-    xdotool type --window $window_pid "ر"  ;;
-    "b"|"B")
-    xdotool type --window $window_pid "ذ"  ;;
-    "n"|"N")
-    xdotool type --window $window_pid "د"  ;;
-    "m"|"M")
-    xdotool type --window $window_pid "پ"  ;;
-    ",")
-    xdotool type --window $window_pid "و"  ;;
-    "C")
-    xdotool type --window $window_pid "ژ"  ;;
-    "1")
-    xdotool type --window $window_pid "۱"  ;;
-    "2")
-    xdotool type --window $window_pid "۲"  ;;
-    "3")
-    xdotool type --window $window_pid "۳"  ;;
-    "4")
-    xdotool type --window $window_pid "۴"  ;;
-    "5")
-    xdotool type --window $window_pid "۵"  ;;
-    "6")
-    xdotool type --window $window_pid "۶"  ;;
-    "7")
-    xdotool type --window $window_pid "۷"  ;;
-    "8")
-    xdotool type --window $window_pid "۸"  ;;
-    "9")
-    xdotool type --window $window_pid "۹"  ;;
-    "0")
-    xdotool type --window $window_pid "۰"  ;;
-    "?")
-    xdotool type --window $window_pid "؟"  ;;
-    "(")
-    xdotool type --window $window_pid ")"  ;;
-    ")")
-    xdotool type --window $window_pid "("  ;;
-    "")
-    xdotool type --window $window_pid " "  ;;
-    "@")
-    xdotool type --window $window_pid "٬"  ;;
-    "#")
-    xdotool type --window $window_pid "٫"  ;;
-    "%")
-    xdotool type --window $window_pid "٪"  ;;
-    "^")
-    xdotool type --window $window_pid "×"  ;;
-    "&")
-    xdotool type --window $window_pid "،"  ;;
-    *)
-    xdotool type --window $window_pid "$line"  ;;
-  esac
-}
-window_pid=$(xdotool getactivewindow)
-#copy clipboard
+#Fingil writed by alireza.amirsamimi@ubuntu.ir and AliReaza
 
- 
+convert () {
+    text=$@
+    out=""
+
+    for i in $(seq 0 $((${#text} - 1))); do
+        hex=$(echo "${text:$i:1}" | xxd -p)
+
+        case "$hex" in
+            "270a") #'
+                out="daaf0a" #گ
+            ;;
+            "280a") #(
+                out="290a" #)
+            ;;
+            "290a") #)
+                out="280a" #(
+            ;;
+            "2c0a") #,
+                out="d9880a" #و
+            ;;
+            "300a") #0
+                out="dbb00a" #۰
+            ;;
+            "310a") #1
+                out="dbb10a" #۱
+            ;;
+            "320a") #2
+                out="dbb20a" #۲
+            ;;
+            "330a") #3
+                out="dbb30a" #۳
+            ;;
+            "340a") #4
+                out="dbb40a" #۴
+            ;;
+            "350a") #5
+                out="dbb50a" #۵
+            ;;
+            "360a") #6
+                out="dbb60a" #۶
+            ;;
+            "370a") #7
+                out="dbb70a" #۷
+            ;;
+            "380a") #8
+                out="dbb80a" #۸
+            ;;
+            "390a") #9
+                out="dbb90a" #۹
+            ;;
+            "3b0a") #;
+                out="daa90a" #ک
+            ;;
+            "410a") #A
+                out="d8a40a" #ؤ
+            ;;
+            "420a") #B
+                out="e2808c0a" # نیم فاصله
+            ;;
+            "430a") #C
+                out="da980a" #ژ
+            ;;
+            "440a") #D
+                out="d98a0a" #ي
+            ;;
+            "450a") #E
+                out="d98d0a" #ٍ
+            ;;
+            "460a") #F
+                out="d8a50a" #إ
+            ;;
+            "470a") #G
+                out="d8a30a" #أ
+            ;;
+            "480a") #H
+                out="d8a20a" #آ
+            ;;
+            "490a") #I
+                out="d9910a" #ّ
+            ;;
+            "4a0a") #J
+                out="d8a90a" #ة
+            ;;
+            "4b0a") #K
+                out="c2bb0a" #»
+            ;;
+            "4c0a") #L
+                out="c2ab0a" #«
+            ;;
+            "4d0a") #M
+                out="d8a10a" #ء
+            ;;
+            "4e0a") #N
+                out="d9940a" #ٔ
+            ;;
+            "4f0a") #O
+                out="5d0a" #]
+            ;;
+            "500a") #P
+                out="5b0a" #[
+            ;;
+            "510a") #Q
+                out="d9920a" #ْ
+            ;;
+            "520a") #R
+                out="d98b0a" #ً
+            ;;
+            "530a") #S
+                out="d8a60a" #ئ
+            ;;
+            "540a") #T
+                out="d98f0a" #ُ
+            ;;
+            "550a") #U
+                out="d98e0a" #َ
+            ;;
+            "560a") #V
+                out="d9b00a" #ٰ
+            ;;
+            "570a") #W
+                out="d98c0a" #ٌ
+            ;;
+            "580a") #X
+                out="d9930a" #ٓ
+            ;;
+            "590a") #Y
+                out="d9900a" #ِ
+            ;;
+            "5a0a") #Z
+                out="d9830a" #ك
+            ;;
+            "5b0a") #[
+                out="d8ac0a" #ج
+            ;;
+            "5d0a") #]
+                out="da860a" #چ
+            ;;
+            "610a") #a
+                out="d8b40a" #ش
+            ;;
+            "620a") #b
+                out="d8b00a" #ذ
+            ;;
+            "630a") #c
+                out="d8b20a" #ز
+            ;;
+            "640a") #d
+                out="db8c0a" #ی
+            ;;
+            "650a") #e
+                out="d8ab0a" #ث
+            ;;
+            "660a") #f
+                out="d8a80a" #ب
+            ;;
+            "670a") #g
+                out="d9840a" #ل
+            ;;
+            "680a") #h
+                out="d8a70a" #ا
+            ;;
+            "690a") #i
+                out="d9870a" #ه
+            ;;
+            "6a0a") #j
+                out="d8aa0a" #ت
+            ;;
+            "6b0a") #k
+                out="d9860a" #ن
+            ;;
+            "6c0a") #l
+                out="d9850a" #م
+            ;;
+            "6d0a") #m
+                out="d9be0a" #پ
+            ;;
+            "6e0a") #n
+                out="d8af0a" #ن
+            ;;
+            "6f0a") #o
+                out="d8ae0a" #خ
+            ;;
+            "700a") #p
+                out="d8ad0a" #ح
+            ;;
+            "710a") #q
+                out="d8b60a" #ض
+            ;;
+            "720a") #r
+                out="d9820a" #ق
+            ;;
+            "730a") #s
+                out="d8b30a" #س
+            ;;
+            "740a") #t
+                out="d9810a" #ف
+            ;;
+            "750a") #u
+                out="d8b90a" #ع
+            ;;
+            "760a") #v
+                out="d8b10a" #ر
+            ;;
+            "770a") #w
+                out="d8b50a" #ص
+            ;;
+            "780a") #x
+                out="d8b70a" #ط
+            ;;
+            "790a") #y
+                out="d8ba0a" #غ
+            ;;
+            "7a0a") #z
+                out="d8b80a" #ظ
+            ;;
+            *)
+                out="${hex}"
+            ;;
+        esac
+
+        out=$(echo "$out" | xxd -p -r)
+        echo -ne "$out"\\r
+    done
+}
+
+window_pid=$(xdotool getactivewindow)
 clipboard=$(xclip -o -sel clip )
-#Spliting clipbord to letters and saving them in a text file in seperate lines
-echo $clipboard | grep -o . > /tmp/fingil.txt
-#checking encoding of file.utf8 is for persian.
-encode_type=$(file -bi /tmp/fingil.txt)
-#reading text file lines and converting them
-sleep 1
-while read -r line;do
-  if [ "$encode_type" == "text/plain; charset=utf-8" ];then
-    case_function_per
-  else
-    case_function_en
-  fi
-done < /tmp/fingil.txt
+
+xdotool type --delay 200 --window $window_pid "$(convert $clipboard)"
 
 exit
