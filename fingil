@@ -229,6 +229,6 @@ convert () {
 window_pid=$(xdotool getactivewindow)
 clipboard=$(xclip -o -sel clip )
 
-xdotool type --delay 200 --window $window_pid "$(convert $clipboard)"
+xdotool type --delay 500 --window $window_pid "$(convert $clipboard)"
 
 exit
